@@ -1,0 +1,34 @@
+---
+title: "Lab5"
+subtitle: "Visualization Spatial Data"
+author: "Musab Isah"
+student: "Ritaj Sanad"
+id: "1122656422"
+output: word_document
+date: "2024-05-29"
+---
+# Load necessary libraries
+library(tidyverse)
+library(dsbox)
+
+# Load the states data
+states <- read_csv("states.csv")
+
+# Calculate locations per thousand square miles for Denny’s
+dennys_density <- dn %>%
+  count(state) %>%
+  inner_join(states, by = c("state" = "abbreviation")) %>%
+  mutate(dennys_per_thousand_sq_miles = n / (area / 1000))
+
+# Calculate locations per thousand square miles for La Quinta’s
+laquinta_density <- lq %>%
+  count(state) %>%
+  inner_join(states, by = c("state" = "abbreviation")) %>%
+  mutate(laquinta_per_thousand_sq_miles = n / (area / 1000))
+
+# Print results
+print("Denny’s locations per thousand square miles:")
+print(dennys_density)
+
+print("La Quinta’s locations per thousand square miles:")
+print(laquinta_density)

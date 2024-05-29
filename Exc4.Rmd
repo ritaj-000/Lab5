@@ -1,0 +1,45 @@
+---
+title: "Lab5"
+subtitle: "Visualization Spatial Data"
+author: "Musab Isah"
+student: "Ritaj Sanad"
+id: "1122656422"
+output: word_document
+date: "2024-05-29"
+---
+# Load necessary libraries
+library(tidyverse)
+library(dsbox)# Count Denny’s locations by state
+dennys_count <- dn %>%
+  count(state)
+
+# Count La Quinta’s locations by state
+laquinta_count <- lq %>%
+  count(state)
+
+# Find states with the most and fewest Denny’s locations
+most_dennys <- dennys_count %>%
+  filter(n == max(n))
+
+fewest_dennys <- dennys_count %>%
+  filter(n == min(n))
+
+# Find states with the most and fewest La Quinta’s locations
+most_laquinta <- laquinta_count %>%
+  filter(n == max(n))
+
+fewest_laquinta <- laquinta_count %>%
+  filter(n == min(n))
+
+# Print results
+print("States with the most Denny’s locations:")
+print(most_dennys)
+
+print("States with the fewest Denny’s locations:")
+print(fewest_dennys)
+
+print("States with the most La Quinta’s locations:")
+print(most_laquinta)
+
+print("States with the fewest La Quinta’s locations:")
+print(fewest_laquinta)

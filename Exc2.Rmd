@@ -1,0 +1,28 @@
+---
+title: "Lab5"
+subtitle: "Visualization Spatial Data"
+author: "Musab Isah"
+student: "Ritaj Sanad"
+id: "1122656422"
+output: word_document
+date: "2024-05-29"
+---
+# Load necessary libraries
+library(tidyverse)
+library(dsbox)
+
+# Load La Quinta dataset
+data("laquinta")
+
+# Get dimensions of the La Quinta’s dataset
+dim_laquinta <- dim(laquinta)
+num_rows_laquinta <- nrow(laquinta)
+num_cols_laquinta <- ncol(laquinta)
+
+# Print results
+print(paste("Dimensions of La Quinta's dataset:", dim_laquinta))
+print(paste("Number of rows:", num_rows_laquinta))
+print(paste("Number of columns:", num_cols_laquinta))
+
+# Inspect the first few rows to understand what each row represents and what the variables are
+head(laquinta)

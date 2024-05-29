@@ -1,0 +1,30 @@
+---
+title: "Lab5"
+subtitle: "Visualization Spatial Data"
+author: "Musab Isah"
+student: "Ritaj Sanad"
+id: "1122656422"
+output: word_document
+date: "2024-05-29"
+---
+
+# Load necessary libraries
+library(tidyverse)
+library(dsbox)
+
+# Load Denny's dataset
+data("dennys")
+
+# Get dimensions of the Denny’s dataset
+dim_dennys <- dim(dennys)
+num_rows_dennys <- nrow(dennys)
+num_cols_dennys <- ncol(dennys)
+
+# Print results
+print(paste("Dimensions of Denny's dataset:", dim_dennys))
+print(paste("Number of rows:", num_rows_dennys))
+print(paste("Number of columns:", num_cols_dennys))
+
+# Inspect the first few rows to understand what each row represents and what the variables are
+head(dennys)
+

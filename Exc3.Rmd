@@ -1,0 +1,22 @@
+---
+title: "Lab5"
+subtitle: "Visualization Spatial Data"
+author: "Musab Isah"
+student: "Ritaj Sanad"
+id: "1122656422"
+output: word_document
+date: "2024-05-29"
+---
+# Load necessary libraries
+library(tidyverse)
+library(dsbox)
+# Add a country variable to the Denny’s and La Quinta’s datasets
+dn <- dennys %>%
+  mutate(country = "United States")
+
+lq <- laquinta %>%
+  mutate(country = "United States")
+
+# Verify the addition of the new variable
+head(dn)
+head(lq)
